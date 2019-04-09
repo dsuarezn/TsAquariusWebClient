@@ -1,0 +1,109 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-12" [hidden]="editVisible">
+        <div class="card">
+          <div class="card-header">
+            <div class="row">
+                <div class="col-sm-10"><i class="fa fa-align-justify"></i> Listado de usuarios</div>
+                <div class="col-sm-2 d-flex flex-row-reverse">
+                  <button (click)="clickEdicionUsuario($event)" class="addButton btn btn-sm btn-success " type="button">
+                      <i class="fa fa-user-plus fa-lg"></i>
+                         
+                      Agregar usuario
+                  </button>
+                </div>
+            </div>       
+            
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Correo</th>
+                  <th>Identificación</th>
+                  <th>Nombres</th>
+                  <th>Apellidos</th>                  
+                  <th>Estatus</th>                  
+                  <th>Editar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let persona of personas">
+                  <td>{{persona.username}}</td>
+                  <td>{{persona.identi}}</td>
+                  <td>{{persona.nombres}}</td>
+                  <td>{{persona.apellidos}}</td>                  
+                  <td>{{persona.status}}</td>
+                  <td>Botón Editar</td>
+                </tr>                
+              </tbody>
+            </table>
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+      <div class="col-sm-6" [hidden]="!editVisible">
+          <div class="card">
+            <div class="card-header">
+              <strong>Datos de usuario</strong>              
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="company">Correo electrónico</label>
+                <input type="text" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
+              </div>
+              <div class="form-group">
+                <label for="vat">No de Identificación</label>
+                <input type="text" class="form-control" id="dni" placeholder="Ingrese sus número de identificación">
+              </div>
+              <div class="form-group">
+                <label for="vat">Nombres</label>
+                <input type="text" class="form-control" id="firstname" placeholder="Ingrese sus nombres completos">
+              </div>
+              <div class="form-group">
+                <label for="street">Apellidos</label>
+                <input type="text" class="form-control" id="surnames" placeholder="Ingrese sus apellidos">
+              </div>
+              <div class="row">
+                <div class="form-group col-sm-12 text-center">
+                  <label for="estatus">Activo</label>
+                  <div class="col-xs-2 text-center">
+                    <mat-checkbox color="primary" id="estatus"></mat-checkbox>
+                  </div>
+                </div>               
+              </div><!--/.row-->        
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" (click)="clickEdicionFinalizada($event)" >Guardar Cambios</button>
+                <button class="btn btn-secondary" type="button" (click)="clickEdicionFinalizada($event)">Cancelar</button>
+              </div>
+            </div>
+          </div>
+        </div><!--/.col-->
+      <!--/.col-->
+
+      <div class="col-sm-6" [hidden]="!editVisible">
+        <div class="card">
+          <div class="card-header">
+            <strong>Permisos</strong>              
+          </div>
+          <div class="card-body">
+            <multiple-checklist-select></multiple-checklist-select>              
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    
+
+</div>

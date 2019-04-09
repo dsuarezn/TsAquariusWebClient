@@ -1,0 +1,77 @@
+.innerheader{
+    display: flex;
+    justify-content: center;
+  }
+
+
+.tab-pane {
+    padding: 0.1rem !important;
+    
+}
+
+app-ifnconglomerado .noleftrightpadd {
+  padding-left: 0.2rem !important;
+  padding-right: 0.2rem !important;
+}
+
+
+.mat-card{
+  padding: 10px !important;
+}
+
+
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #20a8d8 !important;
+}
+
+mat-selection-list {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+
+
+.container-fluid {
+  padding: 0 10px !important;
+}
+
+
+
+.minInput50{
+  min-width: 60px;
+}
+
+.minInput60{
+  min-width: 60px;
+}
+
+.minInput80{
+  min-width: 80px;
+}
+
+.minInput150{
+  min-width: 150px;
+}
+
+
+.noMarginBottom{
+  margin-bottom: 0px;
+}
+
+
+.addButton{
+  color:#62CF62;
+}
+
+.deleteButton{
+  color:#CF5A3C;
+}
+
+.itemlistbox{
+  height: 35px !important;  
+}
+
+.tcardhedbutton{
+  margin-top: auto !important;
+}

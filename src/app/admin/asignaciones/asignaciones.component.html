@@ -1,0 +1,133 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i>Listado de asignaciones
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Usuario</th>
+                  <th>Conglomerado</th>
+                  <th>Vigencia</th>
+                  <th>Editar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let persona of personas">
+                  <td>{{persona.username}}</td>
+                  <td>{{persona.identi}}</td>
+                  <td>{{persona.nombres}}</td>
+                  <td>{{persona.apellidos}}</td>                  
+                  <td>Botón Editar</td>
+                </tr>                
+              </tbody>
+            </table>
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+      <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <strong>Asignaciones</strong>              
+            </div>
+            <div class="card-body row">
+              <div>                 
+                <mat-card class="form-control border" style="height: 350px; width: 250px"   >                      
+                    <mat-card-subtitle>  
+                    <label>Usuarios</label>
+                    <ng-template>
+                        <input matInput class="col-sm-12 form-control">
+                    </ng-template>   
+                  </mat-card-subtitle>                             
+                    <mat-card-content>                              
+                        <div class="border" style="height: 245px; overflow: auto;">
+                            <ul class="list-group">
+                              <li style="height: 45px;" *ngFor="let usuario of usuarios" value="usuario"  (click)="listaUsuariosClick($event, usuario)" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                {{usuario.nombre}}                                
+                                <mat-checkbox style="margin-top: 8px;"></mat-checkbox>                                                                               
+                              </li>
+                            </ul>                                                                     
+                        </div>
+                    </mat-card-content>
+                  </mat-card>
+              </div>
+              <span style="width: 10px;"></span> 
+              <div>                 
+                  <mat-card class="form-control border" style="height: 350px; width: 250px"   >                      
+                      <mat-card-subtitle>  
+                      <label>Conglomerados</label>
+                      <ng-template>
+                          <input matInput class="col-sm-12 form-control">
+                      </ng-template>   
+                    </mat-card-subtitle>                             
+                      <mat-card-content>                              
+                          <div class="border" style="height: 245px; overflow: auto;">
+                              <ul class="list-group">
+                                <li style="height: 35px;" *ngFor="let conglomerado of conglomerados" value="conglomerado" [ngClass]="{'active': selectedItemConglomerado == conglomerado}" (click)="listaConglomeradosClick($event, conglomerado)" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                  {{conglomerado.nombre}}
+                                  <span class="fa fa-angle-right fa-lg" aria-hidden="true"></span>
+                                </li>
+                              </ul>                                                                     
+                          </div>
+                      </mat-card-content>
+                    </mat-card>
+                </div> 
+                <span style="width: 10px;"></span> 
+                <div>                 
+                    <mat-card class="form-control border" style="height: 350px; width: 250px"   >                      
+                        <mat-card-subtitle>  
+                        <label>Vigencias</label>
+                        <ng-template>
+                            <input matInput class="col-sm-12 form-control">
+                        </ng-template>   
+                      </mat-card-subtitle>                             
+                        <mat-card-content>                              
+                            <div class="border" style="height: 245px; overflow: auto;">
+                                <ul class="list-group">
+                                  <li style="height: 35px;" *ngFor="let vigencia of vigencias" value="vigencia" [ngClass]="{'active': selectedItemVigencia == vigencia}" (click)="listaVigenciasClick($event, vigencia)" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    {{vigencia.nombre}}
+                                    <span class="fa fa-angle-right fa-lg" aria-hidden="true"></span>
+                                  </li>
+                                </ul>                                                                     
+                            </div>
+                        </mat-card-content>
+                      </mat-card>
+                  </div> 
+                  <div >
+                      <mat-card class="form-control border" style="height: 350px" class="col-sm-12"   >                      
+                          <mat-card-subtitle>  
+                          <label>Seleccion</label>
+                          <ng-template>
+                              <input matInput class="col-sm-12 form-control">
+                          </ng-template>   
+                        </mat-card-subtitle>                             
+                          <mat-card-content>                              
+                            
+                          </mat-card-content>
+                        </mat-card>
+                      
+                  </div>
+            </div>
+            
+          </div>
+        </div><!--/.col-->
+      <!--/.col-->
+    </div>
+
+    
+
+</div>

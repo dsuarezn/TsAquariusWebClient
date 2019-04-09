@@ -1,0 +1,163 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i>Listado de usuarios
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Familia</th>
+                <th>Genero</th>
+                <th>Especie</th>                  
+                <th>Autor</th>
+                <th>Id Sinonimo</th>
+                <th>Autoridad taxonomica</th>
+                <th>Fecha de modificación</th>
+                <th>Editar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let especie of especies">
+                <td>{{especie.especieId}}</td>
+                <td>{{especie.familia}}</td>
+                <td>{{especie.genero}}</td>
+                <td>{{especie.especie}}</td>                  
+                <td>{{especie.autor}}</td>
+                <td>{{especie.sinonimoId}}</td>
+                <td>{{especie.canlogin}}</td>
+                <td>{{especie.fechaRegistro}}</td>
+                <td>Botón Editar</td>
+              </tr>                
+            </tbody>
+          </table>
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+    <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>Especie</strong>              
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="form-group col-sm-4">
+                  <label for="company">Familia</label>
+                  <mat-select class="form-control form-control-sm" [(ngModel)]="addespecie.familia" placeholder="Seleccione una opción">
+                      <mat-option *ngFor="let fml of soloFamilias; let i=index" value="fml.codigo">{{item.nombre}}</mat-option>                                                                                        
+                  </mat-select> 
+              </div>
+              <div class="form-group col-sm-4">
+                  <label for="company">Familia no existente</label> 
+                  <input type="text" class="form-control" id="familiaNoIncluida" [(ngModel)]="addespecieNoIncluida.familia" placeholder="Digite la familia a agregar">
+              </div>  
+              <div class="form-group col-sm-4">    
+                  <label for="company">&nbsp;</label>    
+                  <div class="row">                     
+                    <button class="btn btn-primary" type="button"><i class="fa fa-pencil"></i>&nbsp; Modificar</button>               
+                  </div>
+                </div>            
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-4">
+                    <label for="company">Genero</label>
+                    <mat-select class="form-control form-control-sm" [(ngModel)]="addespecie.genero" placeholder="Seleccione una opción">
+                        <mat-option *ngFor="let fml of soloFamilias; let i=index" value="fml.codigo">{{item.nombre}}</mat-option>                                                                                        
+                    </mat-select> 
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="company">Genero no existente</label>
+                    <input type="text" class="form-control" id="generoNoIncluido" [(ngModel)]="addespecieNoIncluida.genero" placeholder="Digite el genero a agregar">
+                </div>  
+                <div class="form-group col-sm-4">    
+                    <label for="company">&nbsp;</label>    
+                    <div class="row">                     
+                      <button class="btn btn-primary" type="button"><i class="fa fa-pencil"></i>&nbsp; Modificar</button>                  
+                    </div>
+                  </div>            
+              </div>
+              <div class="row">
+                  <div class="form-group col-sm-4">
+                      <label for="company">Especie</label>
+                      <mat-select class="form-control form-control-sm" [(ngModel)]="addespecie.especie" placeholder="Seleccione una opción">
+                          <mat-option *ngFor="let fml of soloFamilias; let i=index" value="fml.codigo">{{item.nombre}}</mat-option>                                                                                        
+                      </mat-select> 
+                  </div>
+                  <div class="form-group col-sm-4">
+                      <label for="company">Especie no existente</label>
+                      <input type="text" class="form-control" id="especieNoIncluido" [(ngModel)]="addespecieNoIncluida.especie" placeholder="Digite la especie a agregar">
+                  </div>  
+                  <div class="form-group col-sm-4">    
+                      <label for="company">&nbsp;</label>    
+                      <div class="row">                     
+                        <button class="btn btn-primary" type="button"><i class="fa fa-pencil"></i>&nbsp; Modificar</button>                 
+                      </div>
+                    </div>            
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="company">Autor</label>
+                        <mat-select class="form-control form-control-sm" [(ngModel)]="addespecie.autor" placeholder="Seleccione una opción">
+                            <mat-option *ngFor="let fml of soloFamilias; let i=index" value="fml.codigo">{{item.nombre}}</mat-option>                                                                                        
+                        </mat-select> 
+                    </div>  
+                    <div class="form-group col-sm-4">
+                        <label for="company">Autor no existente</label>
+                        <input type="text" class="form-control" id="autorNoIncluido" [(ngModel)]="addespecieNoIncluida.autor" placeholder="Digite el autor a agregar">
+                    </div>
+                    <div class="form-group col-sm-4">    
+                        <label for="company">&nbsp;</label>    
+                        <div class="row">                     
+                          <button class="btn btn-primary" type="button"><i class="fa fa-pencil"></i>&nbsp; Modificar</button>                  
+                        </div>
+                      </div>            
+                  </div>
+                  <div class="row">
+                      <div class="form-group col-sm-4">
+                          <label for="company">Autoridad taxonómica</label>
+                          <mat-select class="form-control form-control-sm" [(ngModel)]="addespecie.nombreAutoridad" placeholder="Seleccione una opción">
+                              <mat-option *ngFor="let fml of soloFamilias; let i=index"  value="fml.codigo">{{item.nombre}}</mat-option>                                                                                        
+                          </mat-select> 
+                      </div>               
+                      <div class="form-group col-sm-4">    
+                          <label for="company">&nbsp;</label>    
+                          <div class="row">                     
+                            <button class="btn btn-primary" type="button"><i class="fa fa-pencil"></i>&nbsp; Modificar</button>                 
+                          </div>
+                        </div>            
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-4">
+                            <label for="company">Seleccione un sinónimo</label>
+                            <mat-select class="form-control form-control-sm" [(ngModel)]="addespecie.sinonimoId" placeholder="Seleccione una opción">
+                                <mat-option *ngFor="let fml of soloFamilias; let i=index" value="fml.codigo">{{item.nombre}}</mat-option>                                                                                        
+                            </mat-select> 
+                        </div>                                                
+                      </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+              <button class="btn btn-secondary" type="button">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div><!--/.col-->
+    <!--/.col-->
+  </div>
+
+  
+
+</div>
